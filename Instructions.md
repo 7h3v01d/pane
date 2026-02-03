@@ -8,7 +8,7 @@ These instructions will guide you through the process of setting up, testing, an
 - Internet access: Required for web URLs.
 
 ### Step 1: Set Up the Project Directory
-Create a single folder for your project. If using local HTML files, place your Python script (main.py), your HTML file (e.g., Voidborne2.3.html), and any additional assets (e.g., images, CSS, JavaScript) in this directory. For web URLs, no local files are needed.
+Create a single folder for your project. If using local HTML files, place your Python script (main.py), your HTML file (e.g., index.html), and any additional assets (e.g., images, CSS, JavaScript) in this directory. For web URLs, no local files are needed.
 
 ---
 
@@ -28,26 +28,26 @@ Run the script directly from your terminal, specifying either a local HTML file 
 
 - For a local file:
 ```bash
-python main.py --html Voidborne2.3.html
+python main.py --html index.html
 ```
 - For a web URL:
 ```bash
 python main.py --html https://example.com
 ```
-- To disable hardware acceleration (recommended for Voidborne2.3.html to prevent flickering):
+- To disable hardware acceleration (recommended for index.html to prevent flickering):
 ```bash
-python main.py --html Voidborne2.3.html --gpu disable
+python main.py --html index.html --gpu disable
 ```
 - To enable hardware acceleration (default):
 ```bash
-python main.py --html Voidborne2.3.html --gpu enable
+python main.py --html index.html --gpu enable
 ```
 
 This will launch your frameless window, displaying the specified content. If a local HTML file is missing, an error message will appear.
 
 **Troubleshooting Flickering or Blank Screen**:
 If the window content flickers or appears blank when resizing, maximizing, restoring, or hovering over HTML elements:
-- Use `--gpu disable` to disable hardware acceleration, which has resolved flickering for Voidborne2.3.html: `python main.py --html Voidborne2.3.html --gpu disable`.
+- Use `--gpu disable` to disable hardware acceleration, which has resolved flickering for index.html: `python main.py --html index.html --gpu disable`.
 - Update your graphics drivers, as QWebEngineView relies on hardware acceleration.
 - Right-click in the window and select "Inspect" to open Chromium DevTools. Check the console for JavaScript errors or excessive repaints.
 - For web URLs, console warnings (e.g., "Unrecognized feature: 'web-share'") are normal and can be ignored unless they cause functionality issues.
@@ -71,12 +71,12 @@ If using a local HTML file, use PyInstaller to convert your script into a standa
 
 For **Windows**:
 ```bash
-pyinstaller --onefile --windowed --add-data "Voidborne2.3.html;." main.py
+pyinstaller --onefile --windowed --add-data "index.html;." main.py
 ```
 
 For **Unix-like systems** (Linux/MacOS):
 ```bash
-pyinstaller --onefile --windowed --add-data "Voidborne2.3.html:." main.py
+pyinstaller --onefile --windowed --add-data "index.html:." main.py
 ```
 
 To include additional assets (e.g., images, CSS), add them to the --add-data option, separated by commas. For example:
